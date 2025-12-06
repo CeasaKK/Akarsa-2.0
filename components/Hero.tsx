@@ -21,7 +21,7 @@ export default function Hero() {
         </p>
 
         <div className="hero-actions">
-  <Link href="#ServicesOverview">
+  <Link href="#services">
     <button className="btn btn-primary">Explore Services</button>
   </Link>
 
