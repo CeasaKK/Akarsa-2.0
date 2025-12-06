@@ -150,15 +150,14 @@ section {
 .navbar-inner {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  width: 100%;
+  padding: 0 2rem;
 }
 
 /* logo */
 
 .navbar-logo {
-  display: flex;
-  align-items: center;
-  gap: 10px;
+  flex : 1;
 }
 
 .logo-symbol {
@@ -182,11 +181,10 @@ section {
 /* nav strip */
 
 .navbar-nav {
+  flex: 2;
   display: flex;
-  align-items: center;
-  gap: 32px;
-  margin-left: 64px;
-  flex: 1;
+  justify-content: center; /* centers the buttons */
+  gap: 2rem;
 }
 
 /* base item wrapper */
@@ -232,11 +230,7 @@ section {
 
 /* dropdown trigger */
 
-.nav-item-dropdown .nav-link-dropdown {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-}
+
 
 .nav-caret {
   font-size: 10px;
@@ -245,23 +239,21 @@ section {
 
 /* dropdown panel – hidden by default */
 
+.nav-item-dropdown { position: relative; }
+
 .nav-dropdown {
   position: absolute;
   top: 100%;
   left: 0;
-  margin-top: 8px;
+  transform: translateY(6px); /* small visual offset if you want, but avoid big gaps */
+  /* or transform: none; keep top: 100% with small margin if needed */
   min-width: 220px;
-  padding: 10px 0;
-  background: #1a050b; /* deep maroon like your screenshot */
-  border-radius: 10px;
-  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.6);
-  z-index: 40;
-
-  opacity: 0;
-  transform: translateY(4px);
-  pointer-events: none;
-  transition: opacity 0.15s ease, transform 0.15s ease;
+  z-index: 50;
 }
+
+/* if you used hidden/visible classes */
+.nav-dropdown.hidden { display: none; }
+.nav-dropdown.visible { display: block; }
 
 /* keep open while hovering trigger OR dropdown */
 
@@ -305,8 +297,9 @@ section {
 /* right side CTA */
 
 .navbar-actions {
+  flex: 1; /* pushes center back to the middle & CTA stays right */
   display: flex;
-  align-items: center;
+  justify-content: flex-end;
 }
 
 .navbar-cta {
@@ -321,8 +314,12 @@ section {
 
 .hero-inner {
   width: 100%;
-  max-width: 1100px; /* wide desktop content, not a phone */
-  margin: 0;
+  max-width: 900px;              /* more like your Figma */
+  margin: 0 auto;                /* CENTER the entire hero block */
+  text-align: center;            /* center all text */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .hero-logo-text {
@@ -2119,8 +2116,23 @@ section {
   margin: 0 auto;
 }
 
-.service-hero-banner { height: 320px; } /* slightly taller for webdev */
-.service-hero-content { margin-top: -140px; max-width: 960px; }
+/* Ensure hero content sits below the navbar instead of overlapping it */
+.service-hero-banner {
+  /* keep the banner height but don't let content overlap navbar */
+  height: 320px;              /* keep the intended height */
+  position: relative;
+  padding-top: 72px;         /* space from top so nav doesn't overlap */
+  box-sizing: border-box;
+}
+
+/* Replace negative margin with positive padding for consistent spacing */
+.service-hero-content {
+  margin-top: 0;             /* remove any negative lift */
+  padding-top: 0;           /* content already spaced by banner padding */
+  z-index: 2;               /* ensure content sits above the hero bg */
+  position: relative;
+  max-width: 960px;
+}
 
 /* reuse gd-content / gd-image styles from graphic page — slight overrides */
 .gd-content .section-heading-title { font-size: 34px; margin-bottom: 10px; }

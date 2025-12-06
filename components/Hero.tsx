@@ -1,6 +1,6 @@
 
 // components/Hero.tsx
-
+import Link from "next/link";
 export default function Hero() {
   return (
     <section className="hero">
@@ -21,9 +21,14 @@ export default function Hero() {
         </p>
 
         <div className="hero-actions">
-          <button className="btn btn-primary">Explore Services</button>
-          <button className="btn btn-outline">View Portfolios</button>
-        </div>
+  <Link href="#ServicesOverview">
+    <button className="btn btn-primary">Explore Services</button>
+  </Link>
+
+  <Link href="#portfolio">
+    <button className="btn btn-outline">View Portfolios</button>
+  </Link>
+</div>
 
         <div className="hero-social-proof">
           <div className="hero-avatars">

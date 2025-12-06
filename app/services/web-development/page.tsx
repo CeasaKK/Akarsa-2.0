@@ -1,7 +1,10 @@
 // app/services/web-development/page.tsx
-import WebDevHero from "../../components/WebDevHero";
-import WebDevContent from "../../components/WebDevContent";
-import WebDevSidebar from "../../components/WebDevSidebar";
+import Navbar from "@/components/Navbar";
+import WebDevHero from "../../../components/WebDevHero";
+import WebDevContent from "../../../components/WebDevContent";
+import WebDevSidebar from "../../../components/WebDevSidebar";
+import Cta from "@/components/Cta";
+import Footer from "@/components/Footer";
 
 export const metadata = {
   title: "Web Development — Akarsa",
@@ -11,6 +14,7 @@ export const metadata = {
 export default function WebDevelopmentPage() {
   return (
     <main className="page webdev-page">
+        <Navbar />
       <WebDevHero />
 
       <section className="section webdev-section">
@@ -24,6 +28,8 @@ export default function WebDevelopmentPage() {
           </aside>
         </div>
       </section>
+        <Cta />
+        <Footer />
     </main>
   );
 }
