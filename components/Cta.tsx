@@ -16,7 +16,7 @@ export default function Cta() {
           <Link href="/contact" className="btn btn-primary-cta">
             Contact Us
           </Link>
-          <Link href="/proposal" className="btn btn-outline-cta">
+          <Link href="/contact" className="btn btn-outline-cta">
             Request a Proposal
           </Link>
         </div>

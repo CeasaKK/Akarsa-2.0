@@ -24,8 +24,6 @@ export default function AboutPage() {
         {/* Reuse Team component if you want the team on the about page */}
         <section style={{ paddingTop: 40 }}>
           <div className="card-dark" style={{ padding: "40px" }}>
-            <p className="section-heading-eyebrow">Our Team</p>
-            <h2 className="section-heading-title">Meet the people behind Akarsa</h2>
             <Footer />
           </div>
         </section>

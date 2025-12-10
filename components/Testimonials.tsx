@@ -20,7 +20,7 @@ const TESTIMONIALS: Testimonial[] = [
       "Akarsa didn’t just make an ad, they created motion. They captured the joy, the sweat, the laughter, and the teamwork that lives inside our stores. From script to screen, everything felt natural and real. The video still gives us goosebumps.",
     client: "Decathlon",
     location: "Indore",
-    logo: "/client-decathlon.png",
+    logo: "/testimonials/decathlon.png",
   },
   {
     id: "adidas",
@@ -28,7 +28,7 @@ const TESTIMONIALS: Testimonial[] = [
       "The team understood our brief quickly and delivered a campaign that outperformed our expectations. Creative, data-driven, and reliable — exactly what we needed.",
     client: "Adidas",
     location: "Berlin",
-    logo: "/client-adidas.png",
+    logo: "/testimonials/adidas.png",
   },
   {
     id: "localco",
@@ -36,7 +36,7 @@ const TESTIMONIALS: Testimonial[] = [
       "Working with Akarsa felt like adding creative teammates to our in-house group. Fast turnaround, excellent craft, and measurable results.",
     client: "LocalCo",
     location: "Mumbai",
-    logo: "/client-localco.png",
+    logo: "/testimonials/localco.png",
   },
   {
     id: "startupx",
@@ -44,7 +44,7 @@ const TESTIMONIALS: Testimonial[] = [
       "Amazing storytelling and a seamless production process. Akarsa helped us position our product with clarity and personality.",
     client: "StartupX",
     location: "Bengaluru",
-    logo: "/client-startupx.png",
+    logo: "/testimonials/startupx.png",
   },
 ];
 
@@ -59,7 +59,7 @@ export default function Testimonials() {
     // autoplay switching every 1000ms (1 second)
     intervalRef.current = window.setInterval(() => {
       setIndex((i) => (i + 1) % TESTIMONIALS.length);
-    },6000);
+    },3000);
 
     return () => {
       mountedRef.current = false;
@@ -90,58 +90,80 @@ export default function Testimonials() {
       <h2 className="section-heading-title">Trusted By Clients Worldwide</h2>
 
       <article className="card-dark testimonials-card">
-        <div className="testimonials-illustration">
-          <Image
-            src="/testimonial-illustration.png"
-            alt="testimonial illustration"
-            width={900}
-            height={380}
-            className="testimonials-illustration-img"
-          />
+      <div className="testimonials-grid">
+        <div className="testimonials-left">
+          <div className="testimonials-illustration">
+            <Image
+              src="/testimonials/Our Testimonials.gif"
+              alt="testimonial illustration"
+              width={900}
+              height={380}
+              className="testimonials-illustration-img"
+            />
+          </div>
         </div>
 
-        <blockquote className="testimonials-quote">“{current.quote}”</blockquote>
+        <div className="testimonials-right">
+          <blockquote className="testimonials-quote">
+            “{current.quote}”
+          </blockquote>
 
-        <div className="testimonials-meta">
-          <div className="testimonial-client">
-            {current.logo && (
-              <div className="testimonial-logo">
-                <Image src={current.logo} alt={current.client} width={48} height={48} />
-              </div>
-            )}
-            <div>
-              <div className="testimonial-client-name">{current.client}</div>
-              {current.location && (
-                <div className="testimonial-client-location">{current.location}</div>
+          <div className="testimonials-meta">
+            <div className="testimonial-client">
+              {current.logo && (
+                <div className="testimonial-logo">
+                  <Image
+                    src={current.logo}
+                    alt={current.client}
+                    width={48}
+                    height={48}
+                  />
+                </div>
               )}
+              <div>
+                <div className="testimonial-client-name">
+                  {current.client}
+                </div>
+                {current.location && (
+                  <div className="testimonial-client-location">
+                    {current.location}
+                  </div>
+                )}
+              </div>
+            </div>
+
+            {/* rotating clickable banner — links to /testimonials */}
+            <div
+              className="testimonial-rotator"
+              onMouseEnter={pause}
+              onMouseLeave={resume}
+              onFocus={pause}
+              onBlur={resume}
+            >
+              <Link href="/testimonials" className="testimonial-rotator-link">
+                <div className="testimonial-rotator-inner">
+                  <div className="testimonial-rotator-logo">
+                    {current.logo ? (
+                      <Image
+                        src={current.logo}
+                        alt={`${current.client} logo`}
+                        width={36}
+                        height={36}
+                      />
+                    ) : (
+                      <div className="testimonial-rotator-dot" />
+                    )}
+                  </div>
+                  <div className="testimonial-rotator-text">
+                    {current.client} — {current.location ?? ""}
+                  </div>
+                  <div className="testimonial-rotator-cta">›</div>
+                </div>
+              </Link>
             </div>
           </div>
-
-          {/* rotating clickable banner — links to /testimonials */}
-          <div
-            className="testimonial-rotator"
-            onMouseEnter={pause}
-            onMouseLeave={resume}
-            onFocus={pause}
-            onBlur={resume}
-          >
-            <Link href="/testimonials" className="testimonial-rotator-link">
-              <div className="testimonial-rotator-inner">
-                <div className="testimonial-rotator-logo">
-                  {current.logo ? (
-                    <Image src={current.logo} alt={`${current.client} logo`} width={36} height={36} />
-                  ) : (
-                    <div className="testimonial-rotator-dot" />
-                  )}
-                </div>
-                <div className="testimonial-rotator-text">
-                  {current.client} — {current.location ?? ""}
-                </div>
-                <div className="testimonial-rotator-cta">›</div>
-              </div>
-            </Link>
-          </div>
         </div>
+      </div>
       </article>
     </section>
   );

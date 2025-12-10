@@ -4,31 +4,27 @@ import Image from "next/image";
 export default function AboutHero() {
   return (
     <section className="about-hero">
-      <div className="about-hero-inner card-dark">
-        <div className="about-hero-text">
-          <p className="section-heading-eyebrow">About Us</p>
-          <h1 className="hero-title" style={{ marginBottom: 12 }}>
-            We Turn Ideas Into Impactful Digital Experiences
-          </h1>
-          <p className="hero-text">
-            We don’t just create designs — we build experiences. Akarsa helps
-            businesses transform ideas into powerful digital identities that
-            stand out in today’s competitive world.
-          </p>
-        </div>
+      {/* Background image + gradient overlay */}
+      <div className="about-hero-bg">
+        <Image
+          src="/BG Gradient.png" // put your about hero background image here
+          alt="Team working together at Akarsa"
+          fill
+          priority
+          className="about-hero-bg-image"
+        />
+        <div className="about-hero-overlay" />
+      </div>
 
-        <div className="about-hero-media">
-          <div className="about-hero-image-wrapper">
-            <Image
-              src="/about-hero.jpg"
-              alt="Team collaborating"
-              width={1200}
-              height={720}
-              className="about-hero-image"
-            />
-            <div className="about-hero-overlay" />
-          </div>
-        </div>
+      {/* Centered content */}
+      <div className="about-hero-content">
+        <p className="section-heading-eyebrow">About Us</p>
+        <h1 className="hero-title about-hero-title">About Us</h1>
+        <p className="hero-text about-hero-text">
+          We don’t just create designs—we build experiences. Akarsa helps
+          businesses transform ideas into powerful digital identities that stand
+          out in today&apos;s competitive world.
+        </p>
       </div>
     </section>
   );

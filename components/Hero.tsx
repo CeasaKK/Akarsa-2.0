@@ -32,9 +32,9 @@ export default function Hero() {
 
         <div className="hero-social-proof">
           <div className="hero-avatars">
-            <div className="avatar-circle" />
-            <div className="avatar-circle" />
-            <div className="avatar-circle" />
+            <div className="avatar-circle" ><img src="/hero/Careers 1.svg" alt="User 1" /></div>
+            <div className="avatar-circle" ><img src="/hero/Careers 2.svg" alt="User 2" /></div>
+            <div className="avatar-circle" ><img src="/hero/Careers 3.svg" alt="User 3" /></div>
             <div className="avatar-badge">+90</div>
           </div>
           <p className="hero-social-text">

@@ -2,11 +2,7 @@ export default function GraphicDesignHero() {
   return (
     <div className="service-hero-wrapper">
       <div className="service-hero-banner">
-        <img
-          src="/services/hero-graphic.jpg"
-          className="service-hero-img"
-          alt="Graphic Design"
-        />
+       
         <div className="service-hero-overlay" />
         <div className="service-hero-content">
           <h1 className="hero-title">Graphic Design</h1>

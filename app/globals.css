@@ -37,9 +37,9 @@ body {
 .page {
   min-height: 100vh;
   width: 100%;
-  max-width: none; /* full width */
+  max-width: none;
   margin: 0;
-  background: linear-gradient(90deg, #050307 0%, #3a0912 100%);
+  background: #050307; /* pure dark background for rest of site */
   padding: 32px 96px 96px;
   box-sizing: border-box;
 }
@@ -130,12 +130,28 @@ section {
 }
 
 .card-cta {
+  display: inline-block;
   margin-top: 16px;
-  font-size: 15px;
-  font-weight: 600;
-  color: var(--accent);
+  padding: 10px 18px;
+  background: rgba(255,255,255,0.06);
+  border-radius: 8px;
+  color: #ed1010;
+  font-size: 14px;
+  transition: all 0.25s ease;
+  cursor: pointer;
+  text-decoration: none;
 }
 
+.card-cta:hover {
+  background: rgba(255,255,255,0.15);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+}
+
+.card-cta:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
 /* NAVBAR – FULL WIDTH INSIDE PAGE PADDING */
 /* NAVBAR – DESKTOP HEADER WITH LINKS */
 
@@ -163,13 +179,7 @@ section {
 .logo-symbol {
   width: 34px;
   height: 34px;
-  border-radius: 999px;
-  border: 2px solid #ffffff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 700;
-  font-size: 16px;
+  
 }
 
 .logo-word {
@@ -245,10 +255,24 @@ section {
   position: absolute;
   top: 100%;
   left: 0;
-  transform: translateY(6px); /* small visual offset if you want, but avoid big gaps */
-  /* or transform: none; keep top: 100% with small margin if needed */
-  min-width: 220px;
-  z-index: 50;
+  background: #0f0f0f;         /* DARK BACKGROUND (MATCHING WEBSITE) */
+  padding: 12px 0;
+  border-radius: 8px;
+  min-width: 180px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  z-index: 999;
+}
+
+.nav-dropdown a {
+  display: block;
+  padding: 10px 16px;
+  color: #fff;
+  font-size: 14px;
+  white-space: nowrap;
+}
+
+.nav-dropdown a:hover {
+  background: rgba(255, 255, 255, 0.06);
 }
 
 /* if you used hidden/visible classes */
@@ -309,7 +333,23 @@ section {
 /* HERO – TRUE DESKTOP HERO, LEFT-ALIGNED, WIDE */
 
 .hero {
-  padding-top: 24px;
+  position: relative;
+
+  /* make hero full-width like footer */
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  width: 100vw;
+
+  padding: 160px 0;                 /* open up spacing */
+  background-image: url("/BG Gradient.png");
+  background-size: cover;          /* make it expand */
+  background-position: center;
+  background-repeat: no-repeat;
+
+  border-radius: 0;                /* remove boxy look */
+  overflow: hidden;                /* keep overlay behaving */
 }
 
 .hero-inner {
@@ -344,14 +384,28 @@ section {
 
 .hero-actions {
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   gap: 16px;
-  margin-bottom: 28px;
+}
+
+.hero-actions .btn {
+  transition: background 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.hero-actions .btn:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 28px rgba(255, 51, 102, 0.35);
+  opacity: 0.95;
+}
+
+.hero-actions .btn:active {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(255, 51, 102, 0.25);
 }
 
 .hero-social-proof {
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
   gap: 12px;
 }
@@ -361,17 +415,40 @@ section {
   align-items: center;
 }
 
+.avatar-circle:nth-child(1) {
+  background-image: url("/avatars/person1.jpg");
+}
+
+.avatar-circle:nth-child(2) {
+  background-image: url("/avatars/person2.jpg");
+}
+
+.avatar-circle:nth-child(3) {
+  background-image: url("/avatars/person3.jpg");
+}
+
 .avatar-circle {
-  width: 32px;
-  height: 32px;
-  border-radius: 999px;
-  border: 2px solid #050307;
-  background: linear-gradient(135deg, #ff3366, #ff7a3c);
-  margin-left: -8px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  overflow: hidden;
+  position: relative;
+  border: 2px solid #050307; /* thin border so overlap looks clean */
+  background-size: cover;      /* make image resize to fill the circle */
+  background-position: center; /* keep face centered */
+  background-repeat: no-repeat;
+  margin-left: -12px;          /* create the overlapping effect */
+  box-shadow: 0 0 0 2px rgba(0,0,0,0.35); /* subtle separation from bg */
 }
 
 .avatar-circle:first-child {
-  margin-left: 0;
+  margin-left: 0;              /* first avatar starts normally */
+}
+
+.avatar-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .avatar-badge {
@@ -409,6 +486,12 @@ section {
   margin: 0 auto 16px;
   border-radius: 20px;       /* placeholder until you use real hex SVG */
   border: 4px solid #ff3366;
+}.services-icon {
+  width: 64px;
+  height: 64px;
+  object-fit: contain;
+  margin: 0 auto 16px auto;
+  display: block;
 }
 
 .services-title {
@@ -439,10 +522,66 @@ section {
   margin-bottom: 20px;
 }
 
+/* Two-column layout for About section */
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 2fr; /* 1:3 ratio */
+  gap: 32px;
+  align-items: center;
+}
+
+/* Left column (image) */
+.about-left {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.about-image-wrapper {
+  width: 100%;
+}
+
 .about-image {
   width: 100%;
   height: auto;
-  display: block;
+  object-fit: contain;
+}
+
+.about-image-wrapper {
+  overflow: hidden;
+}
+
+.about-image {
+  transition: transform 0.4s ease;
+}
+
+.about-image-wrapper:hover .about-image {
+  transform: scale(1.06);
+}
+
+/* Right column (text) */
+.about-right {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Responsive behavior */
+@media (max-width: 900px) {
+  .about-grid {
+    grid-template-columns: 1fr; /* stack on mobile */
+    text-align: center;
+  }
+
+  .about-left,
+  .about-right {
+    justify-content: center;
+  }
+
+  .about-image {
+    max-width: 320px;
+    margin: 0 auto;
+  }
 }
 
 .about-list {
@@ -477,6 +616,15 @@ section {
 .about-btn {
   margin-top: 8px;
 }
+.about-btn {
+  transition: background 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.about-btn:hover {
+  background: linear-gradient(135deg, #ff3366, #ff7a3c);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(255,51,102,0.25);
+}
 /* SERVICES DETAILED – 3×3 GRID */
 
 .services-detailed {
@@ -484,15 +632,50 @@ section {
 }
 
 .services-detailed-grid {
-  width: 100%;
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 32px;
+
+  /* NEW → forces equal-height rows */
+  align-items: stretch;
 }
 
+/* wrapper link so it behaves like a block card */
+.services-detailed-card-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* base card look */
 .services-detailed-card {
-  text-align: center;
-  margin-bottom: 0;
+  height: 100%;               /* NEW → stretch to full row height */
+  display: flex;              /* NEW → allow vertical distribution */
+  flex-direction: column;
+  justify-content: flex-start;
+
+  padding: 28px;
+  border-radius: 20px;
+  background: #ffffff;
+
+  transition: transform 0.25s ease,
+              box-shadow 0.25s ease,
+              background 0.25s ease,
+              border-color 0.25s ease;
+}
+
+/* hover state: lift, glow, color shift */
+.services-detailed-card-link:hover .services-detailed-card {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.4);
+  background: linear-gradient(145deg, #ffffff, #ffe7f0);
+  border-color: rgba(255, 51, 102, 0.35); /* if you have a border */
+}
+
+/* optional: icon reacts too */
+.services-detailed-card-link:hover .services-detailed-icon {
+  transform: translateY(-2px) scale(1.05);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  box-shadow: 0 8px 20px rgba(255, 51, 102, 0.3);
 }
 
 /* icon circle */
@@ -507,6 +690,7 @@ section {
   align-items: center;
   justify-content: center;
   background: #f8f8f8;
+  flex-shrink: 0;
 }
 
 .services-detailed-icon-inner {
@@ -549,48 +733,94 @@ section {
   padding: 80px 0;
 }
 
+/* Outer 2-column grid: image left (1), text right (2) */
+.whychoose-grid {
+  display: grid;
+  grid-template-columns: 1fr 2fr; /* 1:3-ish ratio */
+  gap: 32px;
+  align-items: center;
+  width: min(100%, 1200px);
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+/* Left column: image */
+.whychoose-left {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* IMAGE WRAPPER – must have position + height for `fill` images */
 .why-choose-image-wrapper {
-  border-radius: var(--radius-card);
-  overflow: hidden;
-  margin-bottom: 24px;
-}
-
-.why-choose-image {
+  position: relative;
   width: 100%;
-  height: auto;
+  aspect-ratio: 16 / 9;       /* gives the wrapper a real height */
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.55);
+}
+
+/* Next.js <Image fill> sits absolutely inside wrapper */
+.why-choose-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;          /* fills box, crops edges */
+  object-position: center;
   display: block;
+  transition: transform 0.4s ease;
 }
 
-/* constrain text so it doesn't stretch edge-to-edge */
+/* hover zoom */
+.why-choose-image-wrapper:hover .why-choose-image {
+  transform: scale(1.06);
+}
+
+/* Right column: heading + list */
+.whychoose-right {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* tighten heading spacing a bit */
+.whychoose-right .section-heading-eyebrow {
+  margin-bottom: 4px;
+}
+
+.whychoose-right .section-heading-title {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+/* List container inside right column */
 .why-choose-content {
-  margin-top: 24px;
-  max-width: 900px;
+  margin-top: 6px;
 }
 
-/* list + items */
-
+/* List + items */
 .why-choose-list {
   list-style: none;
   padding: 0;
   margin: 0;
+  display: grid;
+  gap: 14px;
 }
 
-/* each row: label on left, description on right */
 .why-choose-item {
   display: grid;
-  grid-template-columns: minmax(0, 260px) minmax(0, 1fr);
-  column-gap: 24px;
-  row-gap: 4px;
+  grid-template-columns: minmax(0, 220px) minmax(0, 1fr);
+  gap: 12px 20px;
   align-items: flex-start;
-  margin-bottom: 18px;
 }
 
-/* left: arrow + two-line title */
-
+/* Left side (arrow + label) */
 .why-choose-left {
   display: flex;
-  align-items: flex-start;
   gap: 8px;
+  align-items: flex-start;
 }
 
 .why-choose-arrow {
@@ -604,19 +834,50 @@ section {
 .why-choose-arrow-pink { color: #ff4fa3; }
 .why-choose-arrow-blue { color: #4d9fff; }
 
-.why-choose-left-text span {
-  display: block;
+.why-choose-left-text {
+  display: flex;
+  flex-direction: column;
   font-weight: 700;
 }
 
-/* right: description */
+.why-choose-left-text span {
+  display: block;
+}
 
-.why-choose-right {
+/* Right side description */
+.why-choose-right-text {
   margin: 0;
   font-size: 15px;
   line-height: 1.7;
   color: var(--text-muted);
-  max-width: 720px; /* stop mega-wide lines */
+  max-width: 720px;
+}
+
+/* Responsive: stack image above text on small screens */
+@media (max-width: 900px) {
+  .whychoose-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    text-align: left;
+  }
+
+  .whychoose-left,
+  .whychoose-right {
+    justify-content: center;
+  }
+
+  .why-choose-image-wrapper {
+    max-width: 420px;
+    margin: 0 auto;
+  }
+
+  .why-choose-item {
+    grid-template-columns: 1fr; /* stack labels and description */
+  }
+
+  .why-choose-left {
+    margin-bottom: 4px;
+  }
 }
 /* PORTFOLIO GRID + HOVER OVERLAYS */
 
@@ -626,60 +887,54 @@ section {
   padding-bottom: 40px;
 }
 
-/* grid: single column stacked tiles (keeps current visual) but uses consistent spacing.
-   If you want multi-column on very wide screens, change grid-template-columns accordingly. */
-/* PORTFOLIO GRID – 3×3 DESKTOP GRID */
+/* === Portfolio uniform grid === */
+
 .portfolio-grid {
-  width: 100%;
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr)); /* 3 columns */
-  gap: 32px; /* same spacing as Services Detailed */
-  margin-top: 28px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 32px;
 }
 
-/* item wrapper */
 .portfolio-item {
   width: 100%;
 }
 
-/* clickable link covers full tile; make focus visible */
-.portfolio-link {
-  display: block;
-  border-radius: 16px;
-  overflow: hidden;
-  outline: none;
-  text-decoration: none;
-}
-
-/* image wrapper: position relative so overlay sits above the image */
 .portfolio-img-wrap {
   position: relative;
   width: 100%;
-  height: auto;
+  aspect-ratio: 16 / 9;     /* all tiles same ratio */
+  border-radius: 24px;
+  overflow: hidden;
 }
 
-/* ensure image fills the container and keeps aspect */
 .portfolio-image {
+  position: absolute;
+  inset: 0;
   width: 100%;
-  height: auto;
+  height: 100%;
+  object-fit: cover;        /* fill box, crop edges */
   display: block;
-  object-fit: cover;
-  transition: transform 0.45s cubic-bezier(.2,.9,.2,1);
-  will-change: transform;
 }
 
-/* overlay sits on top and is initially invisible */
+/* overlay stays the same functionally, but add default positioning just in case */
 .portfolio-overlay {
   position: absolute;
   inset: 0;
   display: flex;
   align-items: flex-end;
   justify-content: center;
-  padding: 28px;
-  background: linear-gradient(180deg, rgba(0,0,0,0) 40%, rgba(0,0,0,0.45) 65%, rgba(0,0,0,0.65) 100%);
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.6),
+    rgba(0, 0, 0, 0.1),
+    transparent
+  );
   opacity: 0;
-  transform: translateY(6px);
-  transition: opacity 0.28s ease, transform 0.28s ease;
+  transition: opacity 0.25s ease;
+}
+
+.portfolio-img-wrap:hover .portfolio-overlay {
+  opacity: 1;
 }
 
 /* overlay inner contains the title and subtle CTA */
@@ -747,23 +1002,45 @@ section {
   width: 100%;
   padding: 80px 0;
 }
-
 .testimonials-card {
-  padding: 36px 40px;
-  border-radius: 20px;
+  padding: 32px 32px;
+}
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.4fr);
+  gap: 32px;
+  align-items: center;
+}
+
+.testimonials-left {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .testimonials-illustration {
   width: 100%;
-  max-width: 700px;
-  margin-bottom: 18px;
 }
 
 .testimonials-illustration-img {
   width: 100%;
   height: auto;
   display: block;
-  border-radius: 12px;
+  object-fit: cover; /* or 'contain' if you want no cropping */
+}
+
+.testimonials-right {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+@media (max-width: 900px) {
+  .testimonials-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
 }
 
 .testimonials-quote {
@@ -853,77 +1130,101 @@ section {
 }
 
 /* 4-per-row desktop grid */
-.team-grid {
-  width: 100%;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 40px;
-  justify-items: center;   /* center cards */
-}
+/* ===== TEAM SECTION LAYOUT ===== */
 
-/* center-align second row when only 3 members */
-.team-grid > :nth-last-child(3):nth-child(n + 5) {
-  grid-column: span 1;
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 32px;
 }
 
 .team-card {
-  width: 100%;
-  max-width: 320px;
-  text-align: center;
-}
-
-.team-img-wrap {
-  position: relative;
-  width: 100%;
-  border-radius: 20px;
-  overflow: hidden;
-}
-
-.team-img {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
-/* stacked circles on left just like your screenshot */
-.team-socials {
-  position: absolute;
-  top: 20px;
-  left: 20px;
   display: flex;
   flex-direction: column;
   gap: 12px;
 }
 
-.team-social-icon {
-  width: 46px;
-  height: 46px;
-  border-radius: 999px;
-  background-size: 60%;
-  background-repeat: no-repeat;
-  background-position: center;
+/* uniform portrait images */
+.team-img-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 3 / 4; /* all headshots same ratio */
+  border-radius: 24px;
+  overflow: hidden;
 }
 
-/* SAMPLE ICON COLORS — replace with SVGs if you want perfection */
-.team-social-icon.insta { background-color: #ff2f7e; background-image: url("/insta-white.png"); }
-.team-social-icon.fb    { background-color: #6a2fff; background-image: url("/fb-white.png"); }
-.team-social-icon.tw    { background-color: #005dff; background-image: url("/x-white.png"); }
+.team-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.35s ease;
+}
+
+.team-img-wrap:hover .team-img {
+  transform: scale(1.06);
+}
+
+/* ===== SOCIAL ICONS OVERLAY ===== */
+
+.team-socials {
+  position: absolute;
+  left: 16px;
+  top: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  opacity: 0;              /* hidden by default */
+  pointer-events: none;    /* not clickable by default */
+  transition: opacity 0.25s ease, transform 0.25s ease;
+  transform: translateX(-4px);
+}
+
+/* when hovering the card, show + activate icons */
+.team-card:hover .team-socials {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateX(0);
+}
+
+.team-social-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(6px);
+  cursor: pointer;
+}
+
+.team-social-icon img {
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+}
+
+/* ===== TEXT BELOW CARDS ===== */
 
 .team-info {
-  margin-top: 18px;
+  margin-top: 8px;
+  text-align: left;
 }
 
 .team-name {
-  font-weight: 700;
-  font-size: 20px;
+  font-size: 18px;
+  font-weight: 600;
 }
 
 .team-role {
-  color: var(--text-muted);
   font-size: 14px;
+  color: var(--text-muted);
 }
 /* CAREERS SECTION (About-like layout with image collage) */
 
+/* CAREERS SECTION (About-like layout with image collage) */
 .careers-section {
   width: 100%;
   padding: 80px 0;
@@ -979,6 +1280,16 @@ section {
   object-fit: cover;
 }
 
+/* === Careers Image Hover Effects === */
+.careers-img {
+  transition: transform 0.35s ease;
+}
+
+.careers-media-large:hover .careers-img,
+.careers-media-small:hover .careers-img {
+  transform: scale(1.06);
+}
+
 /* content area (text + CTAs) */
 .careers-content {
   padding: 6px 0;
@@ -990,6 +1301,16 @@ section {
   display: flex;
   gap: 16px;
   align-items: center;
+}
+
+/* === Careers CTA Button Hover Effects === */
+.careers-ctas .btn {
+  transition: background 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.careers-ctas .btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(255,51,102,0.25);
 }
 
 /* Responsive rules: stack images & content on small screens */
@@ -1673,44 +1994,78 @@ section {
 }
 
 /* HERO */
+/* ==== ABOUT PAGE HERO (full-width, similar to main hero) ==== */
+
 .about-hero {
-  padding: 40px 0 22px;
-}
-
-.about-hero-inner {
-  display: grid;
-  grid-template-columns: 1fr 540px;
-  gap: 28px;
-  align-items: center;
-  width: min(100%, 1200px);
-  margin: 0 auto;
-  padding: 28px;
-}
-
-.about-hero-text .hero-title {
-  font-size: 38px;
-  margin-bottom: 8px;
-}
-
-.about-hero-text .hero-text {
-  max-width: 640px;
-  font-size: 16px;
-  margin-bottom: 0;
-}
-
-.about-hero-image-wrapper {
   position: relative;
-  border-radius: 16px;
+  width: 100%;
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   overflow: hidden;
-  height: 100%;
+  border-radius: 0; /* full bleed; change if you want rounded edges */
+  background-color: #050308;
 }
 
-/* subtle overlay gradient to match site */
+.about-hero-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  border-radius: 45px;
+}
+
+.about-hero-bg-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 45px;
+}
+
 .about-hero-overlay {
   position: absolute;
   inset: 0;
+  background:
+    linear-gradient(120deg, rgba(255, 75, 122, 0.65), rgba(75, 111, 255, 0.65)),
+    radial-gradient(circle at top left, rgba(255, 75, 122, 0.35), transparent 55%),
+    radial-gradient(circle at bottom right, rgba(75, 111, 255, 0.35), transparent 55%);
+  mix-blend-mode: multiply;
   pointer-events: none;
-  background: linear-gradient(90deg, rgba(255,51,102,0.18), rgba(107,75,255,0.06));
+  border-radius: 45px;
+}
+
+.about-hero-content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  max-width: 960px;
+  padding: 80px 24px;
+}
+
+.about-hero-title {
+  margin-top: 12px;
+  margin-bottom: 16px;
+}
+
+.about-hero-text {
+  max-width: 820px;
+  margin: 0 auto;
+}
+
+/* slightly smaller on narrow screens */
+@media (max-width: 900px) {
+  .about-hero {
+    min-height: 70vh;
+  }
+
+  .about-hero-content {
+    padding: 72px 16px;
+  }
+
+  .about-hero-text {
+    font-size: 15px;
+  }
 }
 
 /* CONTENT GRID */
@@ -1997,12 +2352,18 @@ section {
   padding: 28px 0 60px;
 }
 
-.contact-map img,
-.contact-map .contact-map-img {
+.contact-map {
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-map-iframe {
+  border: 0;
   width: 100%;
+  height: 100%;
+  min-height: 360px;
+  border-radius: 24px;
   display: block;
-  border-radius: 12px;
-  object-fit: cover;
 }
 
 /* ---------- Responsive behavior ---------- */
@@ -2183,4 +2544,322 @@ section {
   .webdev-grid { grid-template-columns: 1fr; }
   .service-hero-banner { height: 220px; }
   .service-hero-content { margin-top: -90px; padding: 12px; }
+}
+/* WHYCHOOSE SECTION CTA BUTTON HOVER EFFECTS */
+.whychoose-btn {
+  transition: background 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.whychoose-btn:hover {
+  background: linear-gradient(135deg, #ff3366, #ff7a3c);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(255,51,102,0.25);
+}
+/* ========== SERVICE DETAIL LAYOUT (WebDev + Web Maintenance + others) ========== */
+
+/* Outer section spacing */
+.webdev-section {
+  padding: 80px 0;
+}
+
+/* Generic page inner wrapper – if you don't already have this, keep it */
+.page-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* 2/3 content + 1/3 sidebar grid */
+.webdev-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+  gap: 32px;
+  align-items: flex-start;
+}
+
+/* Left content column */
+.webdev-left {
+  width: 100%;
+}
+
+/* Right sidebar column */
+.webdev-right {
+  width: 100%;
+}
+
+/* (Optional but nice) keep sidebar visible while scrolling */
+@media (min-width: 1024px) {
+  .webdev-right {
+    position: sticky;
+    top: 120px; /* adjust based on navbar height */
+  }
+}
+
+/* Stack columns on small screens */
+@media (max-width: 900px) {
+  .webdev-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .webdev-right {
+    position: static;
+    margin-top: 32px;
+  }
+}
+
+/* ====================== BRANDING & STRATEGY DETAIL PAGE ====================== */
+
+/* outer section (same spacing as webdev / maintenance) */
+.branding-section {
+  padding: 80px 0;
+}
+
+/* 2/3 content + 1/3 sidebar */
+.branding-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+  gap: 32px;
+  align-items: flex-start;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+  box-sizing: border-box;
+}
+
+/* left column (all the long text) */
+.branding-left {
+  width: 100%;
+}
+
+/* right column (sidebar) */
+.branding-right {
+  width: 100%;
+}
+
+/* keep sidebar visible while scrolling on desktop */
+@media (min-width: 1024px) {
+  .branding-right {
+    position: sticky;
+    top: 120px; /* adjust if your navbar height changes */
+  }
+}
+
+/* stack columns on smaller screens */
+@media (max-width: 900px) {
+  .branding-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .branding-right {
+    position: static;
+    margin-top: 32px;
+  }
+}
+
+/* ------------------- SIDEBAR STYLING ------------------- */
+
+.branding-sidebar {
+  background: var(--bg-soft);
+  border-radius: 18px;
+  padding: 20px 22px;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.55);
+}
+
+.branding-sidebar-title {
+  font-size: 18px;
+  font-weight: 700;
+  margin: 0 0 10px;
+}
+
+.branding-sidebar-sub {
+  font-size: 13px;
+  color: var(--text-muted);
+  margin: 0 0 14px;
+}
+
+/* list of links */
+.branding-sidebar-list {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0 0;
+}
+
+.branding-sidebar-item {
+  margin-bottom: 8px;
+}
+
+/* the clickable row */
+.branding-sidebar-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 10px;
+  border-radius: 999px;
+  text-decoration: none;
+  color: var(--text-muted);
+  font-size: 14px;
+  font-weight: 500;
+  transition:
+    background 0.18s ease,
+    color 0.18s ease,
+    transform 0.18s ease;
+}
+
+/* hover effect */
+.branding-sidebar-link:hover {
+  background: rgba(255, 51, 102, 0.12);
+  color: #ffffff;
+  transform: translateY(-1px);
+}
+
+/* active / current page state */
+.branding-sidebar-item.is-active .branding-sidebar-link {
+  background: linear-gradient(135deg, #ff3366, #ff7a3c);
+  color: #ffffff;
+}
+
+/* the arrow / icon on the right */
+.branding-sidebar-arrow {
+  font-size: 16px;
+  margin-left: 10px;
+}
+
+
+
+/* ====================== DIGITAL MARKETING DETAIL PAGE ====================== */
+
+.digital-section {
+  padding: 80px 0;
+}
+
+.digital-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+  gap: 32px;
+  align-items: flex-start;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+  box-sizing: border-box;
+}
+
+.digital-left {
+  width: 100%;
+}
+
+.digital-right {
+  width: 100%;
+}
+
+/* sticky sidebar on desktop */
+@media (min-width: 1024px) {
+  .digital-right {
+    position: sticky;
+    top: 120px; /* tweak if your navbar height changes */
+  }
+}
+
+/* stack on mobile */
+@media (max-width: 900px) {
+  .digital-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .digital-right {
+    position: static;
+    margin-top: 32px;
+  }
+}
+
+
+
+
+
+
+/* ====================== VIDEO COMPOSITION PAGE ====================== */
+
+.video-section {
+  padding: 80px 0;
+}
+
+.video-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(0, 1fr); /* 2/3 + 1/3 */
+  gap: 32px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+  box-sizing: border-box;
+  align-items: flex-start;
+}
+
+.video-left,
+.video-right {
+  width: 100%;
+}
+
+/* make sidebar sticky on desktop */
+@media (min-width: 1024px) {
+  .video-right {
+    position: sticky;
+    top: 120px; /* tune to match your navbar height */
+  }
+}
+
+/* stack on smaller screens */
+@media (max-width: 900px) {
+  .video-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .video-right {
+    position: static;
+    margin-top: 32px;
+  }
+}
+
+/* ====== video list + cards ====== */
+
+.video-list {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  margin-top: 32px;
+}
+
+.video-item-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.video-item-meta {
+  font-size: 0.95rem;
+  color: #ff3366;
+  margin-bottom: 12px;
+}
+
+/* responsive video frame:
+   width = full width of left column, not more than that */
+.video-embed {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 18px;
+  overflow: hidden;
+  background: #000;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45);
+  margin-bottom: 12px;
+}
+
+.video-embed iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+}
+
+.video-item-desc {
+  font-size: 0.98rem;
+  line-height: 1.6;
+  color: #e7e7e7;
 }

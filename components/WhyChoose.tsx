@@ -43,47 +43,52 @@ export default function WhyChoose() {
   return (
     <section id="why-us" className="why-choose">
       <article className="card-dark">
-        <div className="why-choose-image-wrapper">
-          {/* Replace /why-choose.png with your real image */}
-          <Image
-            src="/why-choose.png"
-            alt="Collage of people collaborating"
-            width={800}
-            height={500}
-            className="why-choose-image"
-          />
-        </div>
+        <div className="whychoose-grid">
+          <div className="whychoose-left">
+            <div className="why-choose-image-wrapper">
+              <div className="why-choose-image-wrapper">
+  <Image
+    src="/testimonials/Our Testimonials.gif"
+    alt="Collage of people collaborating"
+    fill
+    className="why-choose-image"
+  />
+</div>
+            </div>
+          </div>
 
-        <p className="section-heading-eyebrow">Why Choose Akarsa</p>
+          <div className="whychoose-right">
+            <p className="section-heading-eyebrow">Why Choose Akarsa</p>
 
-        <h2 className="section-heading-title">
-          Discover The Benefits Of
-          <br />
-          Working With Akarsa
-        </h2>
+            <h2 className="section-heading-title">
+              Discover The Benefits Of
+              <br />
+              Working With Akarsa
+            </h2>
 
-        {/* NEW WRAPPER to control line length & layout */}
-        <div className="why-choose-content">
-          <ul className="why-choose-list">
-            {BENEFITS.map((item) => (
-              <li key={item.id} className="why-choose-item">
-                <div className="why-choose-left">
-                  <span
-                    className={`why-choose-arrow why-choose-arrow-${item.color}`}
-                  >
-                    {">>"}
-                  </span>
-                  <div className="why-choose-left-text">
-                    {item.titleLines.map((line) => (
-                      <span key={line}>{line}</span>
-                    ))}
-                  </div>
-                </div>
+            <div className="why-choose-content">
+              <ul className="why-choose-list">
+                {BENEFITS.map((item) => (
+                  <li key={item.id} className="why-choose-item">
+                    <div className="why-choose-left">
+                      <span
+                        className={`why-choose-arrow why-choose-arrow-${item.color}`}
+                      >
+                        {">>"}
+                      </span>
+                      <div className="why-choose-left-text">
+                        {item.titleLines.map((line) => (
+                          <span key={line}>{line}</span>
+                        ))}
+                      </div>
+                    </div>
 
-                <p className="why-choose-right">{item.description}</p>
-              </li>
-            ))}
-          </ul>
+                    <p className="why-choose-right">{item.description}</p>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
         </div>
       </article>
     </section>

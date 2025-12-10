@@ -30,7 +30,7 @@ export default function Footer() {
         <div className="footer-col footer-brand">
           <div className="footer-logo">
             {/* replace with img/logo if you have one */}
-            <img src="/logo-white.png" alt="Akarsa" className="footer-logo-img" />
+            <img src="/symbol.png" alt="Akarsa" className="footer-logo-img" />
           </div>
 
           <p className="footer-blurb">

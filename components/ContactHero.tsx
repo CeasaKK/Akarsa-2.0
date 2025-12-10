@@ -5,13 +5,8 @@ export default function ContactHero() {
   return (
     <header className="contact-hero">
       <div className="contact-hero-banner">
-        <Image
-          src="/contact-hero.jpg"
-          alt="Contact hero"
-          fill
-          priority
-          className="contact-hero-image"
-        />
+        
+        
         <div className="contact-hero-overlay" />
         <div className="contact-hero-content">
           <h1 className="contact-hero-title">Contact</h1>

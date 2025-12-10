@@ -3,11 +3,7 @@ export default function WebDevHero() {
   return (
     <header className="service-hero-wrapper">
       <div className="service-hero-banner">
-        <img
-          src="/services/hero-webdev.jpg"
-          className="service-hero-img"
-          alt="Web Development"
-        />
+        
         <div className="service-hero-overlay" />
         <div className="service-hero-content">
           <h1 className="hero-title">Web Development</h1>

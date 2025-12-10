@@ -10,7 +10,7 @@ export default function Careers() {
           <div className="careers-media-grid">
             <div className="careers-media-large">
               <Image
-                src="/careers-1.jpg"
+                src="/careers/Brand-Focused Strategies.svg"
                 alt="Team member smiling"
                 width={700}
                 height={520}
@@ -21,7 +21,7 @@ export default function Careers() {
             <div className="careers-media-column">
               <div className="careers-media-small">
                 <Image
-                  src="/careers-2.jpg"
+                  src="/careers/Collaborative & Transparent Approach.svg"
                   alt="Workspace"
                   width={380}
                   height={248}
@@ -30,7 +30,7 @@ export default function Careers() {
               </div>
               <div className="careers-media-small">
                 <Image
-                  src="/careers-3.jpg"
+                  src="/careers/Tailored for Your Business.svg"
                   alt="Two people discussing"
                   width={380}
                   height={248}

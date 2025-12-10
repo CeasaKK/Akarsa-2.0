@@ -12,14 +12,14 @@ type Tile = {
 };
 
 const TILES: Tile[] = [
-  { title: "Branding & Design", slug: "branding-design", src: "/portfolio-1.jpg", alt: "Designer working on branding" },
-  { title: "Web & Product", slug: "web-product", src: "/portfolio-2.jpg", alt: "Code on screen" },
-  { title: "Digital Strategy", slug: "digital-strategy", src: "/portfolio-3.jpg", alt: "UI icons overlay" },
-  { title: "Social Campaigns", slug: "social-campaigns", src: "/portfolio-4.jpg", alt: "social media hands" },
-  { title: "Video & Filmmaking", slug: "video-filmmaking", src: "/portfolio-5.jpg", alt: "camera in studio" },
-  { title: "AI & Creative", slug: "ai-creative", src: "/portfolio-6.jpg", alt: "robot and painting" },
-  { title: "Collaborations", slug: "collaborations", src: "/portfolio-7.jpg", alt: "team stacking hands" },
-  { title: "Workspaces", slug: "workspaces", src: "/portfolio-8.jpg", alt: "team in office" },
+  { title: "Graphic Design", slug: "", src: "/portfolio2/P1.svg", alt: "Designer working on branding" },
+  { title: "Web Development", slug: "", src: "/portfolio2/P2.svg", alt: "Code on screen" },
+  { title: "Branding & Strategy", slug: "", src: "/portfolio2/P3.svg", alt: "UI icons overlay" },
+  { title: "Digital Marketing", slug: "", src: "/portfolio2/Digital Marketing (2).svg", alt: "social media hands" },
+  { title: "Video Composition", slug: "", src: "/portfolio2/Video Composition (1).svg", alt: "camera in studio" },
+  { title: "Creative AI Collaboration", slug: "", src: "/portfolio2/Creative AI Collaboration (1).svg", alt: "robot and painting" },
+  { title: "Cultural Strategy", slug: "", src: "/portfolio2/Cultural Strategy (1).svg", alt: "team stacking hands" },
+  { title: "Something Undefined", slug: "", src: "/portfolio2/Something Undefined (1).svg", alt: "team in office" },
 ];
 
 export default function Portfolio() {
@@ -34,7 +34,12 @@ export default function Portfolio() {
             {/* Wrap with Link so the whole tile is clickable and keyboard-focusable */}
             <Link href={`/portfolio/${t.slug}`} className="portfolio-link" aria-label={`Open ${t.title} case study`}>
               <div className="portfolio-img-wrap">
-                <Image src={t.src} alt={t.alt ?? t.title} width={1200} height={700} className="portfolio-image" />
+                <Image
+                  src={t.src}
+                  alt={t.alt ?? t.title}
+                  fill
+                  className="portfolio-image"
+                />
                 <div className="portfolio-overlay">
                   <div className="portfolio-overlay-inner">
                     <div className="portfolio-title">{t.title}</div>

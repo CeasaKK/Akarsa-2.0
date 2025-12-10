@@ -17,33 +17,33 @@ type Post = {
 const POSTS: Post[] = [
   {
     title: "The Zero Law Era: Decoding the Data Behind Why Traditi...",
-    slug: "zero-law-era",
+    slug: "",
     excerpt:
       "At Akarsa, our mission is to seek truth in marketing. And the truth, according to our latest market analyses, is that the tradi...",
-    img: "/blog-1.jpg",
+    img: "/blog/Blog 1.svg",
     author: "Akarsa Team",
     date: "Oct 10,2025",
-    authorAvatar: "/author-akarsa.png",
+    authorAvatar: "/symbol2.png",
   },
   {
     title: "When Philosophy Meets Branding: The Untold Power ...",
-    slug: "philosophy-branding",
+    slug: "",
     excerpt:
       "In the dynamic chaos of the Zero Law Era – a world where old rules crumble and authenticity reigns – what truly separate...",
-    img: "/blog-2.jpg",
+    img: "/blog/Blog 2.svg",
     author: "Akarsa Team",
     date: "Oct 10,2025",
-    authorAvatar: "/author-akarsa.png",
+    authorAvatar: "/symbol2.png",
   },
   {
     title: "Beyond Trends: Can Authenticity Go Viral? A Per...",
-    slug: "beyond-trends-authenticity",
+    slug: "",
     excerpt:
       "The modern digital landscape is a relentless storm of manufactured moments. Influencer campaigns, paid tre...",
-    img: "/blog-3.jpg",
+    img: "/blog/Blog 3.svg",
     author: "Akarsa Team",
     date: "Oct 10,2025",
-    authorAvatar: "/author-akarsa.png",
+    authorAvatar: "/symbol2.png",
   },
 ];
 

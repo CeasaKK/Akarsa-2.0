@@ -43,7 +43,7 @@ export default function AboutContent() {
           <div className="about-visual-column">
             <div className="about-visual-wrapper">
               <Image
-                src="/about-illustration.jpg"
+                src="/About Us.gif"
                 alt="Illustration"
                 width={720}
                 height={520}

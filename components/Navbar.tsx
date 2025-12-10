@@ -43,10 +43,10 @@ const NAV_ITEMS: NavItem[] = [
     items: [
       { label: "Why Choose Us", href: "#why-choose" },
       { label: "Portfolio", href: "#portfolio" },
-      { label: "Team", href: "/company/team" },
-      { label: "Careers", href: "/company/careers" },
-      { label: "Blog", href: "/company/blog" },
-      { label: "FAQs", href: "/company/faqs" },
+      { label: "Team", href: "#team" },
+      { label: "Careers", href: "#careers" },
+      { label: "Blog", href: "#blog" },
+      { label: "FAQs", href: "#faqs" },
     ],
   },
   { type: "link", label: "Contact", href: "/contact" },
@@ -83,10 +83,10 @@ export default function Navbar() {
       <div className="navbar-inner">
         {/* Left: logo */}
         <div className="navbar-logo" aria-label="Akarsa home">
-          <Link href="/" className="logo-link">
-            <span className="logo-symbol">A</span>
-            <span className="logo-word">AKARSA</span>
-          </Link>
+          <Link href="/" className="logo-link" aria-label="Go to Akarsa Home">
+  <img src="/symbol.png" alt="Akarsa Logo" className="logo-symbol" />
+
+</Link>
         </div>
 
         {/* Center: navigation */}

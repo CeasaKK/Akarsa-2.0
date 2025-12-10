@@ -17,40 +17,58 @@ const TEAM: Member[] = [
   {
     name: "Bhupendra Yadav",
     role: "Cinematographer",
-    img: "/team-1.jpg",
+    img: "/team/cine.png",
     instagram: "https://instagram.com/",
     facebook: "https://facebook.com/",
     twitter: "https://twitter.com/",
   },
   {
-    name: "John Doe",
-    role: "Creative Director",
-    img: "/team-2.jpg",
+    name: "Mayank Banna",
+    role: "Video Editor",
+    img: "/team/edit.png",
+    instagram: "https://instagram.com/",
+    facebook: "https://facebook.com/",
+    twitter: "https://twitter.com/",
   },
   {
-    name: "Aisha Malhotra",
-    role: "Brand Strategist",
-    img: "/team-3.jpg",
+    name: "Abhay Thankur",
+    role: "Backend Developer",
+    img: "/team/backend.png",
+    instagram: "https://instagram.com/",
+    facebook: "https://facebook.com/",
+    twitter: "https://twitter.com/",
   },
   {
-    name: "Karan Sethi",
-    role: "Lead Developer",
-    img: "/team-4.jpg",
+    name: "Rishab Mandal",
+    role: "PPC Specialist",
+    img: "/team/ppc.png",
+    instagram: "https://instagram.com/",
+    facebook: "https://facebook.com/",
+    twitter: "https://twitter.com/",
   },
   {
-    name: "Meera Patel",
-    role: "Designer",
-    img: "/team-5.jpg",
+    name: "Dhruvesh Patel",
+    role: "UI/UX Designer",
+    img: "/team/ai.png",
+    instagram: "https://instagram.com/",
+    facebook: "https://facebook.com/",
+    twitter: "https://twitter.com/",
   },
   {
-    name: "Rohit Verma",
-    role: "Marketing Lead",
-    img: "/team-6.jpg",
+    name: "Renu Chaturvedi",
+    role: "CHRO",
+    img: "/team/chro.png",
+    instagram: "https://instagram.com/",
+    facebook: "https://facebook.com/",
+    twitter: "https://twitter.com/",
   },
   {
-    name: "Sana Qureshi",
-    role: "Copywriter",
-    img: "/team-7.jpg",
+    name: "Riya Karn",
+    role: "HR",
+    img: "/team/hr.png",
+    instagram: "https://instagram.com/",
+    facebook: "https://facebook.com/",
+    twitter: "https://twitter.com/",
   },
 ];
 
@@ -74,13 +92,19 @@ export default function Team() {
 
               <div className="team-socials">
                 {m.instagram && (
-                  <Link href={m.instagram} target="_blank" className="team-social-icon insta" />
+                  <Link href={m.instagram} target="_blank" className="team-social-icon insta">
+                    <Image src="/team/insta.png" alt="Instagram" width={28} height={28} />
+                  </Link>
                 )}
                 {m.facebook && (
-                  <Link href={m.facebook} target="_blank" className="team-social-icon fb" />
+                  <Link href={m.facebook} target="_blank" className="team-social-icon fb">
+                    <Image src="/team/facebook.png" alt="Facebook" width={28} height={28} />
+                  </Link>
                 )}
                 {m.twitter && (
-                  <Link href={m.twitter} target="_blank" className="team-social-icon tw" />
+                  <Link href={m.twitter} target="_blank" className="team-social-icon tw">
+                    <Image src="/team/twitter.png" alt="Twitter" width={28} height={28} />
+                  </Link>
                 )}
               </div>
             </div>
