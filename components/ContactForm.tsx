@@ -6,11 +6,34 @@ import { useState } from "react";
 export default function ContactForm() {
   const [sent, setSent] = useState(false);
 
-  function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    // hook to API later
-    setSent(true);
-    setTimeout(() => setSent(false), 3500);
+
+    const form = e.currentTarget;
+
+    const data = {
+      name: (form.elements.namedItem("name") as HTMLInputElement).value,
+      email: (form.elements.namedItem("email") as HTMLInputElement).value,
+      phone: (form.elements.namedItem("phone") as HTMLInputElement).value,
+      postal: (form.elements.namedItem("postal") as HTMLInputElement).value,
+      subject: (form.elements.namedItem("subject") as HTMLInputElement).value,
+      message: (form.elements.namedItem("message") as HTMLTextAreaElement).value,
+    };
+
+    try {
+      await fetch("/api/contact", {
+  method: "POST",
+  headers: { "Content-Type": "application/json" },
+  body: JSON.stringify(data),
+});
+
+      setSent(true);
+      form.reset();
+      setTimeout(() => setSent(false), 3500);
+    } catch (err) {
+      console.error("Contact form error:", err);
+      alert("Something went wrong. Please try again.");
+    }
   }
 
   return (
@@ -25,6 +48,7 @@ export default function ContactForm() {
         <input name="subject" type="text" placeholder="Subject*" required />
         <textarea name="message" placeholder="Write Your Messages..." rows={6} required />
         <button type="submit" className="contact-submit-btn">Send Message</button>
+      
       </form>
 
       {sent && <div className="contact-form-success">Thanks — we received your message.</div>}

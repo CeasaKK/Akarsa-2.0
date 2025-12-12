@@ -140,7 +140,7 @@ export default function Testimonials() {
               onFocus={pause}
               onBlur={resume}
             >
-              <Link href="/testimonials" className="testimonial-rotator-link">
+              <Link href="#testimonials" className="testimonial-rotator-link">
                 <div className="testimonial-rotator-inner">
                   <div className="testimonial-rotator-logo">
                     {current.logo ? (

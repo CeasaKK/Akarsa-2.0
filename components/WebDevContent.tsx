@@ -42,34 +42,9 @@ export default function WebDevContent() {
       </ul>
 
       {/* carousel dots + simple nav */}
-      <div className="carousel-control">
-        <button
-          className="carousel-arrow left"
-          onClick={() => setSlide((s) => (s - 1 + carousel.length) % carousel.length)}
-          aria-label="Previous"
-        >
-          ‹
-        </button>
+      
 
-        <div className="carousel-dots">
-          {carousel.map((_, i) => (
-            <button
-              key={i}
-              className={`dot ${i === slide ? "active" : ""}`}
-              onClick={() => setSlide(i)}
-              aria-label={`Go to slide ${i + 1}`}
-            />
-          ))}
-        </div>
-
-        <button
-          className="carousel-arrow right"
-          onClick={() => setSlide((s) => (s + 1) % carousel.length)}
-          aria-label="Next"
-        >
-          ›
-        </button>
-      </div>
+      
     </div>
   );
 }

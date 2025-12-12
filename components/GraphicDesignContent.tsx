@@ -11,7 +11,7 @@ export default function GraphicDesignContent() {
 
       <div className="gd-image-wrap">
         <img
-          src="/services/graphic-sample1.jpg"
+          src="/Graphic Design (2).jpg"
           className="gd-image"
           alt="Graphic Design Work"
         />
@@ -32,12 +32,17 @@ export default function GraphicDesignContent() {
         <li>✔ Audience-Focused Strategic Visuals</li>
       </ul>
 
-      <div className="gd-sample-2">
-        <img
-          src="/services/graphic-sample2.jpg"
-          className="gd-image"
-          alt="Graphic Design Showcase"
-        />
+      <div className="gd-slider">
+        <div className="gd-slider-track">
+          <img src="/G1.svg" className="gd-slide" alt="Graphic Showcase 1" />
+          <img src="/G2.svg" className="gd-slide" alt="Graphic Showcase 2" />
+          <img src="/G3.jpg" className="gd-slide" alt="Graphic Showcase 3" />
+          <img src="/G4.jpg" className="gd-slide" alt="Graphic Showcase 4" />
+          <img src="/G5.jpg" className="gd-slide" alt="Graphic Showcase 5" />
+          <img src="/G6.jpg" className="gd-slide" alt="Graphic Showcase 6" />
+          <img src="/G7.jpg" className="gd-slide" alt="Graphic Showcase 7" />
+          <img src="/G8.jpg" className="gd-slide" alt="Graphic Showcase 8" />
+        </div>
       </div>
     </div>
   );

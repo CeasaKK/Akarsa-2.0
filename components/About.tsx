@@ -1,5 +1,6 @@
 // components/About.tsx
 import Image from "next/image";
+import Link from "next/link";
 
 export default function About() {
   return (
@@ -52,7 +53,11 @@ export default function About() {
               </li>
             </ul>
 
-            <button className="btn btn-primary about-btn">Read More</button>
+            
+
+<Link href="/about">
+  <button className="btn btn-primary about-btn">Read More</button>
+</Link>
           </div>
         </div>
       </article>

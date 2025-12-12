@@ -1,0 +1,193 @@
+:root{
+  --bg:#0b0a0b;
+  --muted: #9e9aa0;
+  --accent: #ff4f7a;
+  --container: 1200px;
+}
+
+.page{
+  background: var(--bg);
+  color: #fff;
+  min-height: 100vh;
+  padding-bottom: 80px;
+  box-sizing: border-box;
+  font-family: "Inter", system-ui, -apple-system, Roboto, "Helvetica Neue", Arial;
+}
+
+/* HERO */
+.hero{
+  height: 520px;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  border-radius: 6px;
+  margin: 18px 0;
+  position: relative;
+  overflow: hidden;
+}
+.hero::before{
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(9,6,9,0.65), rgba(20,10,20,0.45));
+}
+.heroOverlay{
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  width: 100%;
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+.kicker{
+  color: var(--accent);
+  margin-bottom: 8px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+.title{
+  font-size: 44px;
+  margin: 6px 0 14px;
+  font-weight: 800;
+  line-height: 1.02;
+}
+.subtitle{
+  color: rgba(255,255,255,0.9);
+  max-width: 980px;
+  margin: 0 auto;
+  font-size: 16px;
+}
+
+/* container / article */
+.container{
+  max-width: var(--container);
+  margin: 40px auto;
+  padding: 0 24px;
+  box-sizing: border-box;
+}
+.article{
+  /* article area styling */
+}
+.bylineCard{
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  border-radius: 12px;
+  padding: 18px;
+  box-shadow: 0 12px 40px rgba(0,0,0,0.6);
+  margin-bottom: 22px;
+}
+.bylineInner{
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.avatarWrap{
+  width: 56px;
+  height: 56px;
+  border-radius: 999px;
+  overflow: hidden;
+  background: linear-gradient(90deg,#ff4f7a,#7a4bff);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.avatarWrap img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.byAuthor{
+  font-weight: 700;
+  font-size: 15px;
+}
+.byDate{
+  color: var(--muted);
+  margin-top: 4px;
+  font-size: 13px;
+}
+
+/* lead paragraph */
+.lead{
+  font-size: 18px;
+  line-height: 1.8;
+  color: rgba(255,255,255,0.94);
+  margin: 14px 0 20px;
+}
+
+/* headings & text */
+.article h2{
+  font-size: 26px;
+  margin-top: 26px;
+  margin-bottom: 10px;
+  font-weight: 800;
+}
+.article p{
+  color: rgba(255,255,255,0.9);
+  line-height: 1.7;
+  font-size: 15.5px;
+}
+
+/* figures */
+.figure{
+  margin: 18px 0;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #0a0a0a;
+  border: 1px solid rgba(255,255,255,0.03);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+}
+.figure img{
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+.figure figcaption{
+  padding: 10px 14px;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+/* bullets */
+.bullets{
+  margin: 12px 0 16px;
+  padding-left: 18px;
+  color: rgba(255,255,255,0.92);
+}
+.bullets li{
+  margin: 8px 0;
+  line-height: 1.6;
+}
+
+/* strategic callout */
+.strategic{
+  margin-top: 8px;
+  color: rgba(255,255,255,0.95);
+  background: rgba(255,255,255,0.01);
+  padding: 12px;
+  border-left: 4px solid var(--accent);
+  border-radius: 6px;
+}
+
+/* conclusion */
+.conclusion{
+  margin-top: 18px;
+  font-weight: 600;
+  font-size: 16px;
+  color: rgba(255,255,255,0.95);
+}
+
+/* source */
+.source{
+  color: var(--muted);
+  margin-top: 20px;
+  font-size: 13px;
+}
+
+/* responsive */
+@media (max-width: 900px){
+  .title{ font-size: 32px; }
+  .hero{ height: 380px; }
+  .lead{ font-size: 16px; }
+}

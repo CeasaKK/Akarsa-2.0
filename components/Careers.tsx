@@ -54,10 +54,10 @@ export default function Careers() {
           </p>
 
           <div className="careers-ctas">
-            <Link href="/careers" className="btn btn-primary">
+            <Link href="/career" className="btn btn-primary">
               Explore Open Roles
             </Link>
-            <Link href="/careers/apply" className="btn btn-outline">
+            <Link href="/career" className="btn btn-outline">
               Apply Now
             </Link>
           </div>

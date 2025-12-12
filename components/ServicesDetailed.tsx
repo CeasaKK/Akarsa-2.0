@@ -35,7 +35,7 @@ const DETAILED_SERVICES: DetailedService[] = [
     text: "We cra brand strategies that connect emotionally with your audience and position your business for long-term success.",
     colorClass: "sd-icon-pink-soft",
     image: "Branding & Strategy.svg",
-    href: "/services/branding-strategy",
+    href: "/services/branding-&-strategy",
   },
   {
     title: "Digital Marketing",

@@ -1,32 +1,26 @@
 // app/services/web-maintenance/page.tsx
 import Navbar from "@/components/Navbar";
-import WebMaintenanceHero from "../../../components/WebMaintainanceHero";
-import WebMaintenanceContent from "../../../components/WebMaintainanceContent";
-import WebDevSidebar from "../../../components/WebDevSidebar";
-import Cta from "@/components/Cta";
 import Footer from "@/components/Footer";
+import Cta from "@/components/Cta";
 
-export const metadata = {
-  title: "Web Maintenance — Akarsa",
-  description:
-    "Web Maintenance — ongoing updates, security monitoring, and performance optimization to keep your website always-on and future-ready.",
-};
+import MaintenanceHero from "@/components/WebMaintainanceHero";
+import MaintenanceContent from "@/components/WebMaintainanceContent";
+import ServicesSidebar from "@/components/ServicesSidebar";
 
-export default function WebMaintenancePage() {
+export default function MaintenancePage() {
   return (
-    <main className="page webdev-page">
+    <main className="page">
       <Navbar />
-      <WebMaintenanceHero />
+      <MaintenanceHero />
 
-      <section className="section webdev-section">
-        <div className="page-inner webdev-grid">
-          <div className="webdev-left">
-            <WebMaintenanceContent />
+      <section className="service-section">
+        <div className="service-grid">
+          <div className="service-left">
+            <MaintenanceContent />
           </div>
-
-          <aside className="webdev-right">
-            <WebDevSidebar />
-          </aside>
+          <div className="service-right">
+            <ServicesSidebar />
+          </div>
         </div>
       </section>
 

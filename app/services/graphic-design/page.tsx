@@ -1,35 +1,31 @@
+// app/services/graphic-design/page.tsx
 import Navbar from "@/components/Navbar";
-import GraphicDesignHero from "../../../components/GraphicDesignHero";
-import GraphicDesignContent from "../../../components/GraphiDesignContent";
-import GraphicDesignSidebar from "../../../components/GraphicDesignSideBar";
-import Cta from "@/components/Cta";
 import Footer from "@/components/Footer";
+import Cta from "@/components/Cta";
 
-export const metadata = {
-  title: "Graphic Design — Akarsa",
-  description:
-    "Graphic design services by Akarsa: branding, print, social media design, and complete identity systems.",
-};
+import GraphicHero from "@/components/GraphicDesignHero";
+import GraphicContent from "@/components/GraphicDesignContent";
+import ServicesSidebar from "@/components/ServicesSidebar";
 
 export default function GraphicDesignPage() {
   return (
-    <main className="page graphic-design-page">
-        <Navbar />
-      <GraphicDesignHero />
+    <main className="page">
+      <Navbar />
+      <GraphicHero />
 
-      <section className="section graphic-design-section">
-        <div className="page-inner graphic-design-grid">
-          <div className="graphic-left">
-            <GraphicDesignContent />
+      <section className="service-section">
+        <div className="service-grid">
+          <div className="service-left">
+            <GraphicContent />
           </div>
-
-          <aside className="graphic-right">
-            <GraphicDesignSidebar />
-          </aside>
+          <div className="service-right">
+            <ServicesSidebar />
+          </div>
         </div>
       </section>
-        <Cta />
-        <Footer />
+
+      <Cta />
+      <Footer />
     </main>
   );
 }
