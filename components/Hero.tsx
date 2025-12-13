@@ -5,7 +5,9 @@ export default function Hero() {
   return (
     <section className="hero">
       <div className="hero-inner">
-        <div className="hero-logo-text">AKARSA</div>
+        <div className="hero-logo">
+  <img src="/akarsa.png" alt="Akarsa Logo" />
+</div>
 
         <h1 className="hero-title">
           Crafting Digital Experiences
