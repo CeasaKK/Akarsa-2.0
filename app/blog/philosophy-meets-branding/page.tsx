@@ -125,7 +125,7 @@ export default function WhenPhilosophy() {
 
           {/* Source citation for admin */}
           <p style={{ marginTop: 26, color: "var(--muted)", fontSize: 13 }}>
-            Source: Akarsa internal brief and marketing insights.  [oai_citation:1‡Website Matrix (1).pdf](sediment://file_00000000c96072089d416b51bc04828f)
+            Source: Akarsa internal brief and marketing insights.
           </p>
         </article>
       </main>

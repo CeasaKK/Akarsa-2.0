@@ -3111,7 +3111,14 @@ section {
   color: #ff3366;
 }
 
+.sidebar-item.is-active {
+  background: linear-gradient(135deg, #ff3366, #ff7a3c);
+}
 
+.sidebar-item.is-active .sidebar-link {
+  color: #ffffff;          /* hard white */
+  font-weight: 700;
+}
 
 
 /* ====================== SERVICE DETAIL LAYOUT (shared) ====================== */
@@ -3238,7 +3245,7 @@ section {
 }
 
 .branding-sidebar-item.is-active .branding-sidebar-link {
-  color: #ff3366;
+  color: #030303;
 }
 
 /* hero banner basics (if not already present) */

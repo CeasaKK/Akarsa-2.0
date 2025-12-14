@@ -11,7 +11,7 @@ export default function GraphicDesignContent() {
 
       <div className="gd-image-wrap">
         <img
-          src="/Graphic Design (2).jpg"
+          src="/Graphic Design (2).svg"
           className="gd-image"
           alt="Graphic Design Work"
         />

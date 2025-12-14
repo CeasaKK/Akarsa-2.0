@@ -95,15 +95,15 @@ export default function Footer() {
         <nav className="footer-col footer-services" aria-label="Our services">
           <h4 className="footer-col-title">Our Services</h4>
           <ul>
-            <li><Link href="#graphic-design">Graphic Design</Link></li>
-            <li><Link href="#web-development">Web Development</Link></li>
-            <li><Link href="#web-maintenance">Web Maintenance</Link></li>
-            <li><Link href="#branding-strategy">Branding & Strategy</Link></li>
-            <li><Link href="#digital-marketing">Digital Marketing</Link></li>
-            <li><Link href="#video-composition">Video Composition</Link></li>
-            <li><Link href="#ai-collaboration">Creative AI Collaboration</Link></li>
-            <li><Link href="#cultural-strategy">Cultural Strategy</Link></li>
-            <li><Link href="#surprise">Surprise Projects</Link></li>
+            <li><Link href="/graphic-design">Graphic Design</Link></li>
+            <li><Link href="/web-development">Web Development</Link></li>
+            <li><Link href="/web-maintenance">Web Maintenance</Link></li>
+            <li><Link href="/branding-&-strategy">Branding & Strategy</Link></li>
+            <li><Link href="/digital-marketing">Digital Marketing</Link></li>
+            <li><Link href="/video-composition">Video Composition</Link></li>
+            <li><Link href="/creative-ai-collaboration">Creative AI Collaboration</Link></li>
+            <li><Link href="/cultural-strategy">Cultural Strategy</Link></li>
+            <li><Link href="/something-undefined">Surprise Projects</Link></li>
           </ul>
         </nav>
 

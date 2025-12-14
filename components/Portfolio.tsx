@@ -25,7 +25,7 @@ const TILES: Tile[] = [
 export default function Portfolio() {
   return (
     <section id="portfolio" className="portfolio-section">
-      <p className="section-heading-eyebrow">Our Porolio</p>
+      <p className="section-heading-eyebrow">Our Portfolio</p>
       <h2 className="section-heading-title">Our Work Speaks Louder</h2>
 
       <div className="portfolio-grid">

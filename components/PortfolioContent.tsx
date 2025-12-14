@@ -18,7 +18,7 @@ const CASES: CaseStudy[] = [
     description:
       "We developed a fully responsive and SEO-optimized e-commerce platform for Blossom Essentials, designed to offer a smooth and intuitive shopping experience with strong branding and modern UI.",
     img: "/W1.svg",
-   // href: "/portfolio/blossom",
+    href: "https://www.ayalalandpremierluxuryhomesph.com",
   },
   {
     id: "case-2",
@@ -27,7 +27,7 @@ const CASES: CaseStudy[] = [
       "Complete brand system for Aurora — logo family, color systems, and visual language that elevated their presence across digital and print platforms.",
     img: "/W2.svg",
     reverse: true,
-    //href: "/portfolio/aurora",
+    href: "https://l1nq.com/Q4Q1L",
   },
   {
     id: "case-3",
@@ -35,7 +35,7 @@ const CASES: CaseStudy[] = [
     description:
       "Data-driven digital marketing campaign combining social, performance ads and creative content that improved visibility and conversions for Nexa.",
     img: "/Nexa Digital Campaign.svg",
-    //href: "/portfolio/nexa",
+    href: "https://penchsafariadventure.com/",
   },
   {
     id: "case-4",
@@ -44,7 +44,7 @@ const CASES: CaseStudy[] = [
       "Video production & showreel for a creative studio — story-driven short-form content that boosted engagement across socials.",
     img: "/Aurora Branding Identity.svg",
     reverse: true,
-    //href: "/portfolio/showreel",
+    href: "https://ivisionconsultant.com/",
   },
 ];
 

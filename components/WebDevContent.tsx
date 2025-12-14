@@ -22,9 +22,7 @@ export default function WebDevContent() {
         experiences that drive conversions and enhance your online presence.
       </p>
 
-      <div className="gd-image-wrap">
-        <img src={carousel[slide]} className="gd-image" alt={`screenshot ${slide + 1}`} />
-      </div>
+      
 
       <p className="gd-text">
         We build responsive, fast, and user-friendly websites that combine functionality

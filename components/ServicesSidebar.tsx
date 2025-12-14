@@ -11,7 +11,7 @@ const SERVICES: Service[] = [
   { href: "/services/graphic-design", label: "Graphic Design" },
   { href: "/services/web-development", label: "Web Development" },
   { href: "/services/web-maintenance", label: "Web Maintenance" },
-  { href: "/services/branding-and-strategy", label: "Branding & Strategy" },
+  { href: "/services/branding-&-strategy", label: "Branding & Strategy" },
   { href: "/services/digital-marketing", label: "Digital Marketing" },
   { href: "/services/video-composition", label: "Video Composition" },
   { href: "/services/creative-ai-collaboration", label: "Creative AI Collaboration" },

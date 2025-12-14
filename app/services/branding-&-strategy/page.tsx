@@ -3,7 +3,7 @@
 import Navbar from "@/components/Navbar";
 import BrandingHero from "../../../components/BrandingHero";
 import BrandingContent from "../../../components/BrandingContent";
-import BrandingSidebar from "../../../components/BrandingSidebar";
+import ServicesSidebar from "@/components/ServicesSidebar";
 import Cta from "@/components/Cta";
 import Footer from "@/components/Footer";
 
@@ -28,7 +28,7 @@ export default function BrandingPage() {
 
           {/* RIGHT COLUMN – custom sidebar */}
           <aside className="branding-right">
-            <BrandingSidebar />
+            <ServicesSidebar />
           </aside>
         </div>
       </section>
