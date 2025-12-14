@@ -39,7 +39,7 @@ const TEAM: Member[] = [
     twitter: "https://twitter.com/",
   },
   {
-    name: "Rishab Mandal",
+    name: "Rishabh Mandal",
     role: "PPC Specialist",
     img: "/team/ppc.png",
     instagram: "https://instagram.com/",
@@ -47,8 +47,8 @@ const TEAM: Member[] = [
     twitter: "https://twitter.com/",
   },
   {
-    name: "Dhruvesh Patel",
-    role: "UI/UX Designer",
+    name: "Aryan Mishra",
+    role: "AI Engineer",
     img: "/team/ai.png",
     instagram: "https://instagram.com/",
     facebook: "https://facebook.com/",
