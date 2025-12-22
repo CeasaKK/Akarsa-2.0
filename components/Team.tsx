@@ -71,7 +71,7 @@ const TEAM: Member[] = [
     twitter: "https://twitter.com/",
   },
   {
-    name: "Dhruvesh Pater",
+    name: "Dhruvesh Patel",
     role: "UI/UX Designer",
     img: "/Dhruvesh Patel.png",
     instagram: "https://instagram.com/",
