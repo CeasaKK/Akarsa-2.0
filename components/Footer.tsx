@@ -82,7 +82,7 @@ export default function Footer() {
             <li><Link href="#about">About Us</Link></li>
             <li><Link href="#services">Services</Link></li>
             <li><Link href="#why-us">Why Choose Akarsa</Link></li>
-            <li><Link href="#portfolio">Porolio</Link></li>
+            <li><Link href="#portfolio">Portfolio</Link></li>
             <li><Link href="#team">Our Team</Link></li>
             <li><Link href="#careers">Careers</Link></li>
             <li><Link href="#blog">Blog</Link></li>
