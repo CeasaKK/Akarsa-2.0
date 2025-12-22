@@ -31,7 +31,7 @@ const TEAM: Member[] = [
     twitter: "https://twitter.com/",
   },
   {
-    name: "Abhay Thankur",
+    name: "Abhay Thakur",
     role: "Backend Developer",
     img: "/team/backend.png",
     instagram: "https://instagram.com/",
@@ -70,6 +70,14 @@ const TEAM: Member[] = [
     facebook: "https://facebook.com/",
     twitter: "https://twitter.com/",
   },
+  {
+    name: "Dhruvesh Pater",
+    role: "UI/UX Designer",
+    img: "/Dhruvesh Patel.png",
+    instagram: "https://instagram.com/",
+    facebook: "https://facebook.com/",
+    twitter: "https://twitter.com/",
+  },
 ];
 
 export default function Team() {
@@ -90,23 +98,7 @@ export default function Team() {
                 className="team-img"
               />
 
-              <div className="team-socials">
-                {m.instagram && (
-                  <Link href={m.instagram} target="_blank" className="team-social-icon insta">
-                    <Image src="/team/insta.png" alt="Instagram" width={28} height={28} />
-                  </Link>
-                )}
-                {m.facebook && (
-                  <Link href={m.facebook} target="_blank" className="team-social-icon fb">
-                    <Image src="/team/facebook.png" alt="Facebook" width={28} height={28} />
-                  </Link>
-                )}
-                {m.twitter && (
-                  <Link href={m.twitter} target="_blank" className="team-social-icon tw">
-                    <Image src="/team/twitter.png" alt="Twitter" width={28} height={28} />
-                  </Link>
-                )}
-              </div>
+              
             </div>
 
             <div className="team-info">
